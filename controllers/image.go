@@ -10,10 +10,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetContainers(ctx *gin.Context) {
+func GetImages(ctx *gin.Context) {
 
 	response := models.Response{}
-	res, err := services.Get(constants.ContainerList)
+	res, err := services.Get(constants.ImageList)
 
 	if err != nil {
 		response.StatusCode = http.StatusInternalServerError
@@ -22,9 +22,9 @@ func GetContainers(ctx *gin.Context) {
 		ctx.JSON(response.StatusCode, gin.H{"response": response})
 	}
 
-	var containers []models.Container
+	var iamges []models.Image
 
-	err = json.Unmarshal([]byte(res), &containers)
+	err = json.Unmarshal([]byte(res), &iamges)
 	if err != nil {
 		response.StatusCode = http.StatusInternalServerError
 		response.Msg = "Failed"
@@ -34,7 +34,7 @@ func GetContainers(ctx *gin.Context) {
 
 	response.StatusCode = http.StatusOK
 	response.Msg = "Success"
-	response.Result = containers
+	response.Result = iamges
 
 	ctx.JSON(response.StatusCode, gin.H{"response": response})
 

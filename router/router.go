@@ -10,6 +10,7 @@ func InitServer() {
 	router := r.Group("/api")
 
 	InitContainerRoutes(router)
+	InitImageRoutes(router)
 
 	r.Run(":8080")
 }

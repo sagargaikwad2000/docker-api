@@ -2,4 +2,4 @@ Implement logger
 Make output in proper json format
 
 
-sudo dockerd -H unix:///var/run/docker.sock -H tcp://192.168.59.106 
+sudo dockerd -H unix:///var/run/docker.sock -H tcp://127.0.0.1
