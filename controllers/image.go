@@ -29,6 +29,7 @@ func GetImages(ctx *gin.Context) {
 		response.StatusCode = http.StatusInternalServerError
 		response.Msg = "Failed"
 		response.Err = err.Error()
+
 		ctx.JSON(response.StatusCode, gin.H{"response": response})
 	}
 

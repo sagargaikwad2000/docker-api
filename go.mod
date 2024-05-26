@@ -3,6 +3,7 @@ module github.com/Ashu23042000/docker-api
 go 1.22.2
 
 require (
+	github.com/Ashu23042000/logger v0.0.0-20240512171019-6d2cd5d9b2fa // indirect
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
 	github.com/cloudwego/base64x v0.1.4 // indirect
